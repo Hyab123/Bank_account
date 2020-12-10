@@ -7,18 +7,18 @@ t = how many periods
 
 """
 
-p = float(input("What's the principle "))
-r = float(input("What's the rate "))
-n = int(input("How many periods "))
-t = int(input("How many payments per period "))
-pv = p * (pow((1 + r/100/n),n*t))
+def compound_intrest():
+    p = float(input("What's the principle "))
+    r = float(input("What's the rate "))
+    n = int(input("How many periods per year"))
+    t = int(input('How many years '))
+    pv = p * (pow((1 + r/100/n),n*t))
 
-print (pv)
-
-def compund_intrest(p, r, n, t):
-    balance = p * (oiw((1+ r/100/n), n*t))
+    balance = p * (pow((1+ r/100/n), n*t))
     ci = balance - p
-    print ('Balance at the end of the period ', round(balance, 2))
-    print("Intrest earned is ", round(ci,2))
+    print ('\nYour balance at the end of the period will be $',round(balance, 2))
+    print('\nYou earned $',round(ci,2), 'during the',t,'year period.')
+    roi = ci/balance*100
+    print("This is a ",round(roi,2),'% return on investment')
 
-compund_intrest(5000,10,12,5)
+compound_intrest()
